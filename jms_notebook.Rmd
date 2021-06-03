@@ -1,0 +1,22 @@
+---
+title: "jms_test_markdown"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+records <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-05-25/records.csv')
+
+```
+
+```{r}
+records %>%
+ filter(date >= "2010-01-12" & date <= "2021-02-25") %>%
+ filter(time >= 
+    275L & time <= 380L) %>%
+ ggplot() +
+ aes(x = player) +
+ geom_bar(fill = "#0c4c8a") +
+ theme_minimal()
+```
+
